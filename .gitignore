@@ -33,6 +33,7 @@ yarn-error.log
 *.tsbuildinfo
 
 # example
+/dist
 /quick-start
 /example_dist
 /example
