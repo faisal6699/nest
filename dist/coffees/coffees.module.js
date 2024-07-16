@@ -10,11 +10,16 @@ exports.CoffeesModule = void 0;
 const common_1 = require("@nestjs/common");
 const coffeesController_1 = require("./coffes/coffeesController");
 const coffees_service_1 = require("./coffees.service");
+const typeorm_1 = require("@nestjs/typeorm");
+const coffee_1 = require("./entity/coffee/coffee");
+const flavor_1 = require("./entity/flavor/flavor");
+const event_entity_1 = require("../events/entities/event.entity/event.entity");
 let CoffeesModule = class CoffeesModule {
 };
 exports.CoffeesModule = CoffeesModule;
 exports.CoffeesModule = CoffeesModule = __decorate([
     (0, common_1.Module)({
+        imports: [typeorm_1.TypeOrmModule.forFeature([coffee_1.Coffee, flavor_1.Flavor, event_entity_1.EventEntity])],
         controllers: [coffeesController_1.CoffeesController],
         providers: [coffees_service_1.CoffeesService],
     })
