@@ -8,7 +8,7 @@ export declare class CoffeesService {
     private readonly coffeeRepository;
     private readonly flavorRepository;
     private readonly connection;
-    constructor(coffeeRepository: Repository<Coffee>, flavorRepository: Repository<Flavor>, connection: Connection);
+    constructor(coffeeRepository: Repository<Coffee>, flavorRepository: Repository<Flavor>, connection: Connection, value: string[]);
     findAll(paginationDto: PaginationDto): Promise<Coffee[]>;
     findOne(id: number): Promise<Coffee>;
     create(createCoffeeDto: CreateCoffeeDto): Promise<Coffee>;
