@@ -1,5 +1,6 @@
 # dependencies
 node_modules/
+dist/
 
 # IDE
 /.idea
@@ -33,7 +34,6 @@ yarn-error.log
 *.tsbuildinfo
 
 # example
-/dist
 /quick-start
 /example_dist
 /example
@@ -49,3 +49,6 @@ build/config\.gypi
 
 .npmrc
 pnpm-lock.yaml
+
+#ENV
+*.env

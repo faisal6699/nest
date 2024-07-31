@@ -15,6 +15,7 @@ const coffee_1 = require("./entity/coffee/coffee");
 const flavor_1 = require("./entity/flavor/flavor");
 const event_entity_1 = require("../events/entities/event.entity/event.entity");
 const defaultValue_1 = require("../defaultValue");
+const config_1 = require("@nestjs/config");
 let CoffeesModule = class CoffeesModule {
 };
 exports.CoffeesModule = CoffeesModule;
@@ -24,6 +25,7 @@ exports.CoffeesModule = CoffeesModule = __decorate([
         controllers: [coffeesController_1.CoffeesController],
         providers: [
             coffees_service_1.CoffeesService,
+            config_1.ConfigService,
             {
                 provide: defaultValue_1.DEFAULT_VALUE,
                 useValue: ['for'],

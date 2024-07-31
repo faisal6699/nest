@@ -4,11 +4,13 @@ import { CreateCoffeeDto } from './dto/create-coffee.dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto/update-coffee.dto';
 import { Flavor } from './entity/flavor/flavor';
 import { PaginationDto } from '../common/dto/pagination.dto/pagination.dto';
+import { ConfigService } from '@nestjs/config';
 export declare class CoffeesService {
     private readonly coffeeRepository;
     private readonly flavorRepository;
     private readonly connection;
-    constructor(coffeeRepository: Repository<Coffee>, flavorRepository: Repository<Flavor>, connection: Connection, value: string[]);
+    private readonly configService;
+    constructor(coffeeRepository: Repository<Coffee>, flavorRepository: Repository<Flavor>, connection: Connection, value: string[], configService: ConfigService);
     findAll(paginationDto: PaginationDto): Promise<Coffee[]>;
     findOne(id: number): Promise<Coffee>;
     create(createCoffeeDto: CreateCoffeeDto): Promise<Coffee>;

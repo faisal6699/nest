@@ -8,8 +8,9 @@ import { Flavor } from './entity/flavor/flavor';
 import { PaginationDto } from '../common/dto/pagination.dto/pagination.dto';
 import { EventEntity } from '../events/entities/event.entity/event.entity';
 import { DEFAULT_VALUE } from '../defaultValue';
+import { ConfigService } from '@nestjs/config';
 
-@Injectable({ scope: Scope.REQUEST })
+@Injectable()
 export class CoffeesService {
   constructor(
     @InjectRepository(Coffee)
@@ -18,8 +19,10 @@ export class CoffeesService {
     private readonly flavorRepository: Repository<Flavor>,
     private readonly connection: Connection,
     @Inject(DEFAULT_VALUE) value: string[],
+    private readonly configService: ConfigService,
   ) {
-    console.log(value);
+    const databaseHost = this.configService.get('database.host', 'localhost');
+    console.log(databaseHost);
   }
 
   findAll(paginationDto: PaginationDto): Promise<Coffee[]> {
