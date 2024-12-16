@@ -1,5 +1,6 @@
 # dependencies
 node_modules/
+dist/
 
 # IDE
 /.idea
@@ -48,3 +49,6 @@ build/config\.gypi
 
 .npmrc
 pnpm-lock.yaml
+
+#ENV
+*.env
